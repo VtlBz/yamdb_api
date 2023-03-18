@@ -69,7 +69,7 @@ jobs:
             username: ${{ secrets.USER }}
             key: ${{ secrets.SSH_KEY }}
             script: |
-              sudo docker-compose exec yamdb-srv python manage.py migrate
+              sudo docker-compose exec -T yamdb-srv python manage.py migrate
 
   send_message:
     runs-on: ubuntu-latest
