@@ -60,7 +60,7 @@ jobs:
             key: ${{ secrets.SSH_KEY }}
             script: |
               sudo docker-compose stop
-              sudo docker-compose rm yamdb-srv
+              sudo docker-compose rm -f yamdb-srv
               sudo docker-compose up -d
               sudo docker-compose exec yamdb-srv python manage.py migrate
 
