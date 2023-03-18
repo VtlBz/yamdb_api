@@ -1,3 +1,10 @@
+# Local personal files
+nppBackup
+temp_code
+temp_*.py
+temp_*.txt
+.notes
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -147,6 +154,4 @@ dmypy.json
 
 # папки со статикой и медиа
 static/
-posts/static/
 media/
-
