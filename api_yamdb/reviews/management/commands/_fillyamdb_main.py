@@ -3,7 +3,6 @@ import logging
 import os
 
 from django.apps import apps
-
 from reviews.management.commands import _fillyamdb_input_config as conf
 
 logger = logging.getLogger(__name__)

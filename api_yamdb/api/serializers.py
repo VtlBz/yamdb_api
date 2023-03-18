@@ -1,12 +1,10 @@
+from core.validators import (TextMaxLengthValidator, YaMDbUsernameValidator,
+                             YearValidator)
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator, UniqueValidator
-
-from core.validators import (TextMaxLengthValidator,
-                             YaMDbUsernameValidator,
-                             YearValidator, )
-from reviews.models import Comment, Category, Genre, Review, Title
+from reviews.models import Category, Comment, Genre, Review, Title
 
 User = get_user_model()
 

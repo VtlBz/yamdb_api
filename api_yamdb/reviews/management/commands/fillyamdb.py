@@ -1,7 +1,6 @@
 from django.core.management.base import BaseCommand
-
-from reviews.management.commands import _fillyamdb_main
 from reviews.management.commands import _fillyamdb_input_config as conf
+from reviews.management.commands import _fillyamdb_main
 
 
 class Command(BaseCommand):

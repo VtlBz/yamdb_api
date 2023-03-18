@@ -1,9 +1,8 @@
 from typing import Tuple
 
+from core.validators import YaMDbUsernameValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
-from core.validators import YaMDbUsernameValidator
 
 
 class YamdbUser(AbstractUser):

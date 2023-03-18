@@ -1,3 +1,11 @@
+from api.filters import TitleFilter
+from api.serializers import (CategorySerializer, CommentSerializer,
+                             GenreSerializer, RegistrationSerializer,
+                             ReviewSerializer, TitlePostSerializer,
+                             TitleSerializer, TokenSerializer, UserSerializer)
+from core.permissions import (AllowAny, IsAdmin, IsAdminOrReadOnly,
+                              IsAuthenticated, IsAuthenticatedOrReadOnly,
+                              IsOwner, IsStuff)
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
@@ -9,30 +17,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
-
-from api.filters import TitleFilter
-from api.serializers import (CategorySerializer,
-                             CommentSerializer,
-                             GenreSerializer,
-                             RegistrationSerializer,
-                             ReviewSerializer,
-                             TitlePostSerializer,
-                             TitleSerializer,
-                             TokenSerializer,
-                             UserSerializer)
-from core.permissions import (AllowAny,
-                              IsAuthenticated,
-                              IsAuthenticatedOrReadOnly,
-                              IsAdmin,
-                              IsAdminOrReadOnly,
-                              IsOwner,
-                              IsStuff)
-from reviews.models import (
-    Category,
-    Genre,
-    Review,
-    Title
-)
+from reviews.models import Category, Genre, Review, Title
 
 User = get_user_model()
 

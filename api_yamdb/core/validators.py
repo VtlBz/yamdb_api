@@ -2,10 +2,10 @@ from typing import List, Tuple, Union
 
 from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.core.validators import (BaseValidator,
-                                    RegexValidator)
+from django.core.validators import BaseValidator, RegexValidator
 from django.utils import timezone
 from django.utils.deconstruct import deconstructible
+
 # from rest_framework.serializers import ValidationError
 
 user_conf = settings.USER_CREDENTIAL_SETTINGS

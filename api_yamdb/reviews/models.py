@@ -1,9 +1,8 @@
 from typing import Tuple
 
+from core.validators import YearValidator
 from django.contrib.auth import get_user_model
 from django.db import models
-
-from core.validators import YearValidator
 
 User = get_user_model()
 
