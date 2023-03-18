@@ -15,6 +15,7 @@ Cервис **YaMDb**, который собирает **отзывы** и оц�
 
 ---
 
+Статус:
 https://github.com/VtlBz/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg
 
 ---
