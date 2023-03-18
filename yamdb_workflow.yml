@@ -60,8 +60,15 @@ jobs:
             key: ${{ secrets.SSH_KEY }}
             script: |
               sudo docker-compose stop
-              sudo docker-compose rm yamdb-srv
+              sudo docker-compose rm -f yamdb-srv
               sudo docker-compose up -d
+        - name: executing remote ssh commands after deploy
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USER }}
+            key: ${{ secrets.SSH_KEY }}
+            script: |
               sudo docker-compose exec yamdb-srv python manage.py migrate
 
   send_message:
