@@ -81,4 +81,4 @@ docker-compose exec yamdb-srv python manage.py createsuperuser
 
 \* *Тестовые данные лежат в папке ./static/db_example_data*
 
-[Тестовый сервер возможно работает тут](http://jstlnk.click/redoc/)
+[Тестовый сервер возможно работает тут](http://jstlnk.click/)

@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,6 +11,7 @@ urlpatterns = [
         TemplateView.as_view(template_name='redoc.html'),
         name='redoc'
     ),
+    path('', RedirectView.as_view(url='/redoc/', permanent=False)),
 ]
 
 if settings.DEBUG:
