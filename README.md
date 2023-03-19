@@ -79,4 +79,6 @@ docker-compose exec yamdb-srv python manage.py createsuperuser
 
 Аргумент ***-p*** *(**--path**)* опциональный, вместо него можно указать путь к папке в константе **DEFAULT_PATH**.
 
-\* *Тестовые данные лежат в папке ./static/data*
+\* *Тестовые данные лежат в папке ./static/db_example_data*
+
+[Тестовый сервер возможно работает тут](http://jstlnk.click/redoc/)

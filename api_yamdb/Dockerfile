@@ -1,6 +1,6 @@
 FROM python:3.7-slim
 
-RUN apt update && apt full-upgrade -y && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get full-upgrade -y && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
