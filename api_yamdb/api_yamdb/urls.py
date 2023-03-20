@@ -12,9 +12,9 @@ urlpatterns = [
         name='redoc'
     ),
     path(
-    'super-secret-path/check/',
-    TemplateView.as_view(template_name='check.html'),
-    name='check'
+        'super-secret-path/check/',
+        TemplateView.as_view(template_name='check.html'),
+        name='check'
     ),
     path('', RedirectView.as_view(url='/redoc/', permanent=False)),
 ]
