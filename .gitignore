@@ -4,6 +4,8 @@ temp_code
 temp_*.py
 temp_*.txt
 .notes
+infra/etc/
+infra/nginx/sites-enabled/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
