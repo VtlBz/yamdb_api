@@ -11,7 +11,11 @@ urlpatterns = [
         TemplateView.as_view(template_name='redoc.html'),
         name='redoc'
     ),
-    path('super-secret-path/check/', TemplateView.as_view(template_name='check.html'), name='check'),
+    path(
+    'super-secret-path/check/',
+    TemplateView.as_view(template_name='check.html'),
+    name='check'
+    ),
     path('', RedirectView.as_view(url='/redoc/', permanent=False)),
 ]
 
