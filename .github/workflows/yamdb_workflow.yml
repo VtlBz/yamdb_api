@@ -1,4 +1,4 @@
-name: yamdb workflow
+name: Deploy yamdb
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   tests:
+    name: Running Tests
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -49,23 +50,26 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/api-yamdb:lastest
 
   deploy:
-      runs-on: ubuntu-latest
-      needs: build_and_push_to_docker_hub
-      steps:
-        - name: executing remote ssh commands to deploy
-          uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USER }}
-            key: ${{ secrets.SSH_KEY }}
-            script: |
-              sudo docker compose stop
-              sudo docker compose rm -f yamdb-srv
-              sudo docker compose pull yamdb-srv
-              sudo docker compose up --build -d
-              sudo docker compose exec -T yamdb-srv python manage.py migrate
+    name: Execute commands to deploy
+    runs-on: ubuntu-latest
+    needs: build_and_push_to_docker_hub
+    steps:
+      - name: executing remote ssh commands to deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            sudo docker compose stop
+            sudo docker compose rm -f yamdb-srv
+            sudo docker compose pull yamdb-srv
+            sudo docker compose up --build -d
+            sudo docker compose exec -T yamdb-srv python manage.py migrate
+            sudo docker image prune -af
 
   send_message:
+    name: Send 'OK' message via Telegram
     runs-on: ubuntu-latest
     needs: deploy
     steps:
