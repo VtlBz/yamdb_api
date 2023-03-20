@@ -61,7 +61,7 @@ jobs:
             script: |
               sudo docker compose stop
               sudo docker compose rm -f yamdb-srv
-              sudo docker compose pull ${{ secrets.DOCKER_USERNAME }}/api-yamdb:lastest
+              sudo docker compose pull yamdb-srv
               sudo docker compose up --build -d
               sudo docker compose exec -T yamdb-srv python manage.py migrate
 
