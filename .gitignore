@@ -4,8 +4,7 @@ temp_code
 temp_*.py
 temp_*.txt
 .notes
-infra/etc/
-infra/nginx/sites-enabled/
+infra/nginx/certbot/conf/live/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
